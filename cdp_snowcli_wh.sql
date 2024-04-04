@@ -1,6 +1,6 @@
 EXECUTE IMMEDIATE $$
 declare
-    var_or_replace varchar default '';
+    var_or_replace varchar;
     var_if_not_exists varchar default 'IF NOT EXISTS';
     var_wh_name varchar;
     var_wh_size varchar;
@@ -20,6 +20,7 @@ declare
     var_global_deployment_id varchar;
     rv varchar;
 begin
+    var_or_replace :='';
     var_wh_name :='snowcli_wh';
     var_wh_size :='\'X-small\'';
     var_scaling_policy :='\'ECONOMY\'';
