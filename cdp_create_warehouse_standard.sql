@@ -26,7 +26,7 @@ begin
     SELECT GETVARIABLE('WH_SIZE') INTO var_wh_size;
     SELECT GETVARIABLE('MAX_CLUST_SIZE') INTO var_max_clust_size;
     SELECT GETVARIABLE('MIN_CLUST_SIZE') INTO var_min_clust_size;
-    SELECT GETVARIABLE('set SCALING_POLICY') INTO var_scaling_policy;
+    SELECT GETVARIABLE('SCALING_POLICY') INTO var_scaling_policy;
     SELECT GETVARIABLE('AUTOSUSPEND_SECS') INTO var_autosuspend_secs;
     SELECT GETVARIABLE('WAREHOUSE_TYPE') INTO var_warehouse_type;
     SELECT GETVARIABLE('GLOBAL_PRIMARY_OWNER') INTO var_global_primary_owner;
