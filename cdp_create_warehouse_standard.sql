@@ -39,7 +39,7 @@ begin
     SELECT GETVARIABLE('WH_DESCRIPTION') INTO var_wh_description;
     SELECT GETVARIABLE('GLOBAL_DEPLOYMENT_ID') INTO var_global_deployment_id;        
     
-    sql := 'CREATE ' || var_or_replace || 'WAREHOUSE ' || var_if_not_exists || ' ' || var_wh_name || ' WITH' || ' WAREHOUSE_SIZE=' || var_wh_size || ' MAX_CLUSTER_COUNT=' || var_max_clust_size  || ' MIN_CLUSTER_COUNT=' || var_min_clust_size || ' SCALING_POLICY=' || var_scaling_policy  || ' AUTO_SUSPEND=' || var_autosuspend_secs || ' WAREHOUSE_TYPE=' || var_warehouse_type || ' AUTO_RESUME= TRUE INITIALLY_SUSPENDED = TRUE' || ' COMMENT=\'{ ' || '"primary_owner" : "' || var_global_primary_owner || '", ' || '}\';';
+    sql := 'CREATE ' || var_or_replace || 'WAREHOUSE ' || var_if_not_exists || ' ' || var_wh_name || ' WITH' || ' WAREHOUSE_SIZE=' || var_wh_size || ' MAX_CLUSTER_COUNT=' || var_max_clust_size  || ' MIN_CLUSTER_COUNT=' || var_min_clust_size || ' SCALING_POLICY=' || var_scaling_policy  || ' AUTO_SUSPEND=' || var_autosuspend_secs || ' WAREHOUSE_TYPE=' || var_warehouse_type || ' AUTO_RESUME= TRUE INITIALLY_SUSPENDED = TRUE' || ' COMMENT=\'{ ' || '"primary_owner" : "' || var_global_primary_owner || '", ' || '"secondary_owner" : "' || var_global_secondary_owner || '", ' || '"owner_group" : "' || var_global_owner_group || '", ' || '"business_owner" : "' || var_global_business_owner || '", ' || '"business_unit" : "' || var_global_business_unit || '", ' || '"business_sub_unit" : "' || var_global_business_sub_unit || '", ' || '"buc" : "' || var_global_buc || '", ' || '"description" : "' || var_wh_description || '", ' || '"deployment_id" : "' || var_global_deployment_id || '" ' || '}\';';
     select :sql;
 end;
 $$
