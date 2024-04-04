@@ -34,7 +34,7 @@ begin
     var_wh_description :='Short description';
     var_global_deployment_id :='12345';
 
-    EXECUTE IMMEDIATE FROM @myco_db.integrations.snowflake_cli/branches/main/cdp_create_warehouse_standard.sql
-    --return rv;
+    EXECUTE IMMEDIATE FROM @myco_db.integrations.snowflake_cli/branches/main/cdp_create_warehouse_standard.sql;
+    
 end;
 $$
