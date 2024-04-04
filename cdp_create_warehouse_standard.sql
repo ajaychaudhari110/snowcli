@@ -39,8 +39,7 @@ begin
     SELECT GETVARIABLE('WH_DESCRIPTION') INTO var_wh_description;
     SELECT GETVARIABLE('GLOBAL_DEPLOYMENT_ID') INTO var_global_deployment_id;        
     
-    sql := 'CREATE ' || var_or_replace || 'WAREHOUSE ' || var_if_not_exists || ' ' || var_wh_name || ' WITH' || ' WAREHOUSE_SIZE=' || var_wh_size || ' MAX_CLUSTER_COUNT=' || var_max_clust_size  || ' MIN_CLUSTER_COUNT=' || var_min_clust_size || ' SCALING_POLICY=' || var_scaling_policy;
-
+    sql := 'CREATE ' || var_or_replace || 'WAREHOUSE ' || var_if_not_exists || ' ' || var_wh_name || ' WITH' || ' WAREHOUSE_SIZE=' || var_wh_size || ' MAX_CLUSTER_COUNT=' || var_max_clust_size  || ' MIN_CLUSTER_COUNT=' || var_min_clust_size || ' SCALING_POLICY=' || var_scaling_policy  || ' AUTO_SUSPEND=' || var_autosuspend_secs || ' WAREHOUSE_TYPE=' || var_warehouse_type || ' AUTO_RESUME= TRUE INITIALLY_SUSPENDED = TRUE;';
     select :sql;
 end;
 $$
