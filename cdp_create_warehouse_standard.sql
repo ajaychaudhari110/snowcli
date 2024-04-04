@@ -49,6 +49,6 @@ begin
     sql := sql || ' WAREHOUSE_TYPE=' || var_warehouse_type;
     sql := sql || ' AUTO_RESUME= TRUE INITIALLY_SUSPENDED = TRUE;';
 
-    execute immediate :sql;
+    select :sql;
 end;
 $$
