@@ -57,7 +57,7 @@ begin
     sql := sql || '"business_sub_unit" : "' || var_global_business_sub_unit || '", ';
     sql := sql || '"buc" : "' || var_global_buc || '", ';
     sql := sql || '"description" : "' || var_wh_description || '", ';
-    sql := sql || '"deployment_id" : "' || var_global_deployment_id || '" ' || '}';';
+    sql := sql || '"deployment_id" : "' || var_global_deployment_id || '" ' || '};';
 
     execute immediate :sql;
 end;
