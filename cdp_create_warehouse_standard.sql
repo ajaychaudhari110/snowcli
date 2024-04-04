@@ -39,7 +39,7 @@ begin
     SELECT GETVARIABLE('WH_DESCRIPTION') INTO var_wh_description;
     SELECT GETVARIABLE('GLOBAL_DEPLOYMENT_ID') INTO var_global_deployment_id;        
     
-    sql := 'CREATE ' || var_or_replace || 'WAREHOUSE ' || var_if_not_exists || ' ' || var_wh_name || ' WITH' || ' WAREHOUSE_SIZE=' || var_wh_size;
+    sql := 'CREATE ' || var_or_replace || 'WAREHOUSE ' || var_if_not_exists || ' ' || var_wh_name || ' WITH' || ' WAREHOUSE_SIZE=' || var_wh_size || ' MAX_CLUSTER_COUNT=' || var_max_clust_size;
 
     select :sql;
 end;
