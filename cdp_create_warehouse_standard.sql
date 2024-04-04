@@ -59,6 +59,6 @@ begin
     sql := sql || '"description" : "' || var_wh_description || '", ';
     sql := sql || '"deployment_id" : "' || var_global_deployment_id || '" ' || '}\';';
 
-    execute immediate :sql;
+    execute immediate sql;
 end;
 $$
