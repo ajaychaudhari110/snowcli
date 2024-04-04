@@ -40,14 +40,6 @@ begin
     SELECT GETVARIABLE('GLOBAL_DEPLOYMENT_ID') INTO var_global_deployment_id;        
     
     sql := 'CREATE ' || var_or_replace || 'WAREHOUSE ' || var_if_not_exists || ' ' || var_wh_name;
-    sql := sql || ' WITH';
-    sql := sql || ' WAREHOUSE_SIZE=' || var_wh_size;
-    sql := sql || ' MAX_CLUSTER_COUNT=' || var_max_clust_size;
-    sql := sql || ' MIN_CLUSTER_COUNT=' || var_min_clust_size;
-    sql := sql || ' SCALING_POLICY=' || var_scaling_policy;
-    sql := sql || ' AUTO_SUSPEND=' || var_autosuspend_secs;
-    sql := sql || ' WAREHOUSE_TYPE=' || var_warehouse_type;
-    sql := sql || ' AUTO_RESUME= TRUE INITIALLY_SUSPENDED = TRUE;';
 
     select :sql;
 end;
