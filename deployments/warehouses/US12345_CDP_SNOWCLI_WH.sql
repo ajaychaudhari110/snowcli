@@ -54,7 +54,7 @@ begin
     set WH_DESCRIPTION = :var_wh_description;
     set GLOBAL_DEPLOYMENT_ID = :var_global_deployment_id;
 
-    EXECUTE IMMEDIATE FROM @myco_db.integrations.snowflake_cli/branches/main/cdp_create_warehouse_standard.sql;
+    EXECUTE IMMEDIATE FROM @myco_db.integrations.snowflake_cli/branches/main/template/v1/cdp_create_warehouse_standard.sql;
     
 end;
 $$
