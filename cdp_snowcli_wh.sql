@@ -1,3 +1,4 @@
+EXECUTE IMMEDIATE $$
 declare
     var_or_replace varchar default '';
     var_if_not_exists varchar default 'IF NOT EXISTS';
@@ -36,3 +37,4 @@ begin
     EXECUTE IMMEDIATE FROM @myco_db.integrations.snowflake_cli/branches/main/cdp_create_warehouse_standard.sql
     --return rv;
 end;
+$$
