@@ -1,6 +1,7 @@
 EXECUTE IMMEDIATE $$
 declare
     sql varchar;
+    var_or_replace varchar;
 begin
     sql := 'CREATE ' || var_or_replace || 'WAREHOUSE ' || var_if_not_exists || ' ' || var_wh_name;
     sql := sql || ' WITH';
